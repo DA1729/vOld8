@@ -3,9 +3,9 @@
 I am going to use the following ALU architecture (1): 
 
 ![ALU-Block Diagram](Pasted_image.png)
-## Opcode Table
 
-### ALU Operation Codes
+
+## Opcode Table
 
 | Operation Code | Operation Instruction |
 |----------------|------------------------|
@@ -25,3 +25,8 @@ I am going to use the following ALU architecture (1):
 | `1101`         | XNOR                   |
 | `1110`         | Comparator             |
 | `1111`         | Comparator             |
+
+
+## References
+
+[1] Huang,Z. (2023). Design and implementation of an 8-bit ALU based on verilog HDL. Theoretical and Natural Science,14,180-185.
