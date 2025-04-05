@@ -2,35 +2,7 @@
 
 I am going to use the following ALU architecture (1): 
 
-
-+---------------------+
-|      8-bit ALU      |
-+----------+----------+
-| Input A  | Input B  |
-| (8-bit)  | (8-bit)  |
-+-----+----+----+-----+
-      |         |
-      v         v
-+---------------------+
-| Arithmetic Logic    |
-|        Unit         |
-+----------+----------+
-           |
-   +-------+-------+
-   |       |       |
-   v       v       v
-+-----+ +-----+ +-----+
-| OVF | | NEG | | ZERO|
-|(1b) | |(1b) | |(1b) |
-+-----+ +-----+ +-----+
-   |       |       |
-   +-------+-------+
-           |
-     +-----+-----+
-     |  Result  |
-     | (8-bit)  |
-     +----------+        
-
+![ALU-Block Diagram](Pasted_image.png)
 ## Opcode Table
 
 ### ALU Operation Codes
