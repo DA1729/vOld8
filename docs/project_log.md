@@ -9,4 +9,4 @@
 - April 5: 
     - made the opcode table with loads of operations
     - change the number of bits of opcode in the block diagram (4 to 5). 
-    
+    - made all the logic units for the ALU

@@ -7,7 +7,7 @@ module CPA #(parameter N = 8)
 );
 
 
-assign {c_out, s} = a + b + cin;
+assign {c_out, y} = a + b + cin;
  
 
  // Refer: David Harris and Sarah Harris. 2012. Digital Design and Computer Architecture, Second Edition (2nd. ed.). Morgan Kaufmann Publishers Inc., San Francisco, CA, USA.
