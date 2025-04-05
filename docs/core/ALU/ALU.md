@@ -7,24 +7,28 @@ I am going to use the following ALU architecture (1):
 
 ## Opcode Table
 
-| Operation Code | Operation Instruction |
-|----------------|------------------------|
-| `0000`         | Addition               |
-| `0001`         | Subtraction            |
-| `0010`         | Multiplication         |
-| `0011`         | Division               |
-| `0100`         | Shift left             |
-| `0101`         | Shift right            |
-| `0110`         | Rotate left            |
-| `0111`         | Rotate right           |
-| `1000`         | AND                    |
-| `1001`         | OR                     |
-| `1010`         | XOR                    |
-| `1011`         | NOR                    |
-| `1100`         | NAND                   |
-| `1101`         | XNOR                   |
-| `1110`         | Comparator             |
-| `1111`         | Comparator             |
+| Operation     | OpCode |
+|---------------|--------|
+| ADD           | 00000  |
+| SUB           | 00001  |
+| MUL           | 00010  |
+| DIV           | 00011  |
+| Shift Left    | 00100  |
+| Shift Right   | 00101  |
+| Rotate Left   | 00110  |
+| Rotate Right  | 00111  |
+| AND           | 01000  |
+| OR            | 01001  |
+| XOR           | 01010  |
+| NOR           | 01011  |
+| NAND          | 01100  |
+| XNOR          | 01101  |
+| EQ (Equal)    | 01110  |
+| NEQ (Not Eq.) | 01111  |
+| LT (Less Than)| 10000  |
+| LTE (≤)       | 10001  |
+| GT (Greater)  | 10010  |
+| GTE (≥)       | 10011  |
 
 
 ## References
