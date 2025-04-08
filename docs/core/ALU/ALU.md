@@ -31,6 +31,12 @@ I am going to use the following ALU architecture (1):
 | Rotate Right   | 10011  |
 
 
+## Additional Notes
+
+- I am not yet implementing the hardware implementations of Multiplication and Division, as it will increase the complexity in the initial stages.
+- Another reason I can get around without these implementations is because I can always perform them at the software level.
+- Although I am still reserving the OpCodes for them as I intend to add them in the later stages.   
+
 ## References
 
 [1] Huang,Z. (2023). Design and implementation of an 8-bit ALU based on verilog HDL. Theoretical and Natural Science,14,180-185.
