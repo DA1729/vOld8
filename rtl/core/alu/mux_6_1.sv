@@ -20,7 +20,7 @@ always_comb begin
         3'd5: d = d3;
         3'd6: d = d4;
         3'd7: d = d5;
-        default: d = (N)'b0;
+        default: d = 8'b0;
     endcase
 end
 endmodule

@@ -40,7 +40,7 @@ case (sel)
     5'd17: d = d12;
     5'd18: d = d13;
     5'd19: d = d14;
-    default: d = (N)'b0;
+    default: d = 8'b0;
 endcase
 end
 

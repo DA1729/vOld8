@@ -3,7 +3,7 @@ module ALU #(parameter N = 8) (
     input logic [N-1:0] a, b,
     input logic         cin,
     output logic [N-1:0] alu_out,
-    output logic V, C, N, Z_ // flags 
+    output logic V, C, N_, Z_ // flags 
 );
 
 // getting the comparison module configured with the 6 to 1 mux
@@ -29,26 +29,27 @@ mux_6_1 comp_output (.sel(OpCode[2:0]),
 // inputs to the 20 to 1 mux
 
 // arithmetic outputs
-CPA add_output (.a(a), .b(b), .c(cin), .s(op_o1), .c_out(C_add), .v(V_add), .n(N_add), .z_(Z_add));  // addition output and corresponding flags
+CPA_gate add_output (.a(a), .b(b), .c(cin), .s(op_o1), .c_out(C_add), .v(V_add), .n(N_add), .z_(Z_add));  // addition output and corresponding flags
 
 sub sub_output (.a(a), .b(b), .y(op_o2), .c_out(C_sub), .z_(Z_sub), .v(V_sub), .n(N_sub)); // subtraction output and corresponding flags
 
 // setting the multiplier and division outputs to 0...
-assign op_o3 = (N)'b0;
-assign op_o4 = (N)'b0;
+assign op_o3 = 8'b0;
+assign op_o4 = 8'b0;
 
 // logic gate outputs
-and and_output (.a(a), .b(b), .y(op_o5));  //  and output
 
-or or_output (.a(a), .b(b), .y(op_o6)); // or output
+and_gate and_output (.a(a), .b(b), .y(op_o5));  //  and output
 
-xor xor_output (.a(a), .b(b), .y(op_o7)); // xor output
+or_gate or_output (.a(a), .b(b), .y(op_o6)); // or output
 
-nor nor_output (.a(a), .b(b), .y(op_o8)); // nor output
+xor_gate xor_output (.a(a), .b(b), .y(op_o7)); // xor output
 
-nand nand_output (.a(a), .b(b), .y(op_o9)); // nand output
+nor_gate nor_output (.a(a), .b(b), .y(op_o8)); // nor output
 
-xnor xnor_output (.a(a), .b(b), .y(op_o10)); // xnor output
+nand_gate nand_output (.a(a), .b(b), .y(op_o9)); // nand output
+
+xnor_gate xnor_output (.a(a), .b(b), .y(op_o10)); // xnor output
 
 
 //shift outputs
@@ -106,7 +107,7 @@ mux_2_1 overflow_mux_out (.sel(OpCode), .a_dd(V_add), .s_ub(V_sub), .d(V));
 mux_2_1 carry_mux_out (.sel(OpCode), .a_dd(C_add), .s_ub(C_sub), .d(C));
 
 // negative calculation
-mux_2_1 negative_mux_out (.sel(OpCode), .a_dd(N_add), .s_ub(N_sub), .d(N));
+mux_2_1 negative_mux_out (.sel(OpCode), .a_dd(N_add), .s_ub(N_sub), .d(N_));
 
 // zero calculation
 mux_2_1 zero_muz_out (.sel(OpCode), .a_dd(Z_add), .s_ub(Z_sub), .d(Z_));
